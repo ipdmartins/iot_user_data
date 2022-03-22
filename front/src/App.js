@@ -1,4 +1,10 @@
+import 'react-toastify/dist/ReactToastify.css';
+
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import { PersistGate } from 'redux-persist/integration/react';
+import { Provider } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
 
 class App extends Component {
   render() {
