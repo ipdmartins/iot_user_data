@@ -1,5 +1,7 @@
-import './assets/css/vendor/bootstrap.min.css';
-import './assets/css/vendor/bootstrap.rtl.only.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import './App.scss';
+
+// import './assets/css/vendor/bootstrap.rtl.only.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
@@ -9,11 +11,24 @@ import App from './App';
 //   document.getElementById('root')
 // );
 
+import {
+  defaultColor,
+  isDarkSwitchActive,
+  themeColorStorageKey,
+} from './constants/defaultValues';
+
+const color =
+  isDarkSwitchActive && localStorage.getItem(themeColorStorageKey)
+    ? localStorage.getItem(themeColorStorageKey)
+    : defaultColor;
+
+localStorage.setItem(themeColorStorageKey, color);
+
 const render = () => {
-  import(`./assets/css/sass/themes/gogo.${color}.scss`).then(_ => {
-    // eslint-disable-next-line global-require
-    require('./App');
-  });
+  // import(`./assets/css/sass/themes/gogo.${color}.scss`).then(_ => {
+  //   // eslint-disable-next-line global-require
+  // });
+  require('./App');
 };
 
 render();
