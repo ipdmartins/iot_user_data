@@ -1,25 +1,32 @@
-import 'react-toastify/dist/ReactToastify.css';
+import { RepositoryList } from './components/RepositoryList';
+import './styles/global.scss';
+
+export function App() {
+  return <RepositoryList />
+}
+
+// import 'react-toastify/dist/ReactToastify.css';
 // import 'bootstrap/scss'
 
-import React, { Suspense } from 'react';
-import ReactDOM from 'react-dom';
+// import React, { Suspense } from 'react';
+// import ReactDOM from 'react-dom';
 // import { PersistGate } from 'redux-persist/integration/react';
 // import { Provider } from 'react-redux';
-import { ToastContainer } from 'react-toastify';
+// import { ToastContainer } from 'react-toastify';
 
-const Routes = React.lazy(() => import('./routes'));
+// const Routes = React.lazy(() => import('./routes'));
 
-ReactDOM.render(
-  // <Provider store={store}>
-    // <PersistGate persistor={persistor}>
-      <Suspense fallback={<div className="loading" />}>
-        <Routes />
-        <ToastContainer />
-      </Suspense>,
-    // </PersistGate>
-  // </Provider>,
-  document.getElementById('root'),
-);
+// ReactDOM.render(
+//   <Provider store={store}>
+//     <PersistGate persistor={persistor}>
+//       <Suspense fallback={<div className="loading" />}>
+//         <Routes />
+//         <ToastContainer />
+//       </Suspense>,
+//     </PersistGate>
+//   </Provider>,
+//   document.getElementById('root'),
+// );
 
 // class App extends Component {
 //   render() {
