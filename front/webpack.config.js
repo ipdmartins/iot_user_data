@@ -6,16 +6,17 @@ const isDevelopment = process.env.NODE_ENV === 'production';
 module.exports = {
     mode: isDevelopment ? 'development' : 'production',
     devtool: isDevelopment ? 'eval-source-map' : 'source-map',//it shows exactly where an error might appear
-    entry: path.resolve(__dirname, 'src', 'index.js'),
+    entry: path.resolve(__dirname, 'src', 'index.tsx'),
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
     resolve: {
-        extensions: ['.js', '.jsx'],
+        extensions: ['.js', '.jsx', 'ts', 'tsx'],
     },
     devServer: {
-        contentBase: path.resolve(__dirname, 'publice'),
+        inline: false,
+        contentBase: path.resolve(__dirname, 'public'),
         hot: true,//relates to ReactRefreshWebpackPlugin
     },
     plugins: [
@@ -27,10 +28,10 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(j|t)sx$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: 'babel-loader',
+                    loader: 'babel-loader', 
                     options: [
                         isDevelopment && require.resolve('react-refresh/babel')
                     ].filter(Boolean)
