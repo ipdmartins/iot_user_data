@@ -5,14 +5,17 @@ import {
   NavbarToggler,
   Nav,
   NavItem,
-  NavLink,
   Card,
   CardBody,
   CardTitle,
   CardSubtitle,
   Input,
-  Button
+  Button,
+  Row,
+  Col,
+  Badge
 } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
 
 const Headers = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,15 +37,33 @@ const Headers = (props) => {
           </CardSubtitle>
         </CardBody>
       </Card>
-      <Navbar color="secondary" className="text-dark" light expand="md">
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
+      <Row className="bg-light pt-2 pb-2 ">
+        <Col sm={3}>
+          <NavLink to="/">Présentation du projet</NavLink>
+        </Col>
+        <Col sm={3}>
+          <NavLink to="/categoryobject">Trouver un objet par catégorie</NavLink>
+        </Col>
+        <Col >
+          <Row>
+            <Col>
+              <Input placeholder="Rechercher un objet par son nome" />
+            </Col>
+            <Col>
+              <Button type="submit" color="primary"><span className='bi bi-search'></span> Search</Button>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+      {/* <Navbar color="secondary" light expand="md">
+        <NavbarToggler />
+        <Collapse navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink>Présentation du projet</NavLink>
+              <NavLink to="/">Présentation du projet</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink>Trouver un objet par catégorie</NavLink>
+              <NavLink to="/categoryobject">Trouver un objet par catégorie</NavLink>
             </NavItem>
             <NavItem className="float-right">
               <Input placeholder="Rechercher un objet par son nome" />
@@ -50,7 +71,7 @@ const Headers = (props) => {
             <Button type="submit" color="primary"><span className='bi bi-search'></span> Search</Button>
           </Nav>
         </Collapse>
-      </Navbar>
+      </Navbar> */}
     </div >
 
   );

@@ -7,6 +7,7 @@ import {
   CardText,
   Table,
 } from 'reactstrap';
+import Footer from '../components/footer';
 import Headers from '../components/navbar';
 
 import api from '../services/api';
@@ -84,6 +85,7 @@ export function Home() {
           </Table>
         </CardBody>
       </Card>
+      <Footer />
     </div>
     // <div>
     //   <Headers />

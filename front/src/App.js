@@ -2,14 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom'
 import NavbarMenu from './components/navbar';
 import Routes from './routes';
-
-// function App(props) {
-//   return (
-//     <Router>
-//       <Routes />
-//     </Router>
-//   )
-// }
+import  '../src/assets/css/home.css'
 
 class App extends Component {
   render() {
