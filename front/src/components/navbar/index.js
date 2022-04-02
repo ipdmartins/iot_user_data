@@ -25,7 +25,7 @@ const Headers = (props) => {
   return (
     <div>
       <Card>
-        <CardBody className="text-center bg-info text-dark">
+        <CardBody className="text-center text-dark" style={{backgroundColor:'#95bafc'}}>
           <CardTitle tag="h3">
             Outils de visualisation de la collecte et du traitement des données
           </CardTitle>
@@ -37,23 +37,25 @@ const Headers = (props) => {
           </CardSubtitle>
         </CardBody>
       </Card>
-      <Row className="bg-light pt-2 pb-2 ">
-        <Col sm={3}>
-          <NavLink to="/">Présentation du projet</NavLink>
+      <Row className="pt-2 pb-2 " style={{backgroundColor:'#d1e2ff'}}>
+        <Col sm={4}>
+          <NavLink to="/"><center>Présentation du projet</center></NavLink>
         </Col>
-        <Col sm={3}>
-          <NavLink to="/categoryobject">Trouver un objet par catégorie</NavLink>
+        <Col sm={4}>
+          
+          <NavLink to="/categoryobject"><center>Trouver un objet par catégorie</center></NavLink>
         </Col>
         <Col >
           <Row>
-            <Col>
-              <Input placeholder="Rechercher un objet par son nome" />
-            </Col>
-            <Col>
-              <Button type="submit" color="primary"><span className='bi bi-search'></span> Search</Button>
-            </Col>
+              <Col>
+                <Input placeholder="Rechercher un objet par son nom" />
+              </Col>
+              <Col>
+                <Button type="submit" color="primary"><span className='bi bi-search'></span> Search</Button>
+              </Col>
+           
           </Row>
-        </Col>
+        </Col>        
       </Row>
       {/* <Navbar color="secondary" light expand="md">
         <NavbarToggler />
