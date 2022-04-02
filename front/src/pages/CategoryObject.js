@@ -2,9 +2,9 @@ import React from 'react';
 import Navbar from '../components/navbar/index';
 import Footbar from '../components/footer/index';
 import { Card, CardBody, CardTitle, CardText, Row, Col } from 'reactstrap';
-import logoHome from '../components/images/home.png';    
-import logoMedical from '../components/images/medical.png';    
-import logoTransport from '../components/images/transport.png';    
+import logoHome from '../assets/images/home.png'    
+import logoMedical from '../assets/images/medical.png';    
+import logoTransport from '../assets/images/transport.png';    
 
 
 export function CategoryObject(){
