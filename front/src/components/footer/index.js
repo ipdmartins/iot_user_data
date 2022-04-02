@@ -2,9 +2,10 @@ import React from 'react';
 
 const Footer = (props) => {
   return (
-    <footer className="bg-light text-dark">
+    <footer id='footer--pin' className="bg-light text-dark">
+      <div className="container">
         <div className="text-center">
-        <div >
+          <div >
             <a href="">Besoin d'aide?</a>{'  -  '}
             <a href="">Conditions d'utilisation</a>
           </div>
@@ -15,6 +16,7 @@ const Footer = (props) => {
             </strong>
           </div>
         </div>
+      </div>
     </footer>
   );
 }
