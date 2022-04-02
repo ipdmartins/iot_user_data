@@ -1,7 +1,9 @@
 import React from 'react';
 import Navbar from '../components/navbar/index';
 import Footbar from '../components/footer/index';
-import { Card, CardBody, CardTitle, CardText, Row, Col } from 'reactstrap';
+import { Card, CardBody, CardTitle, CardText, Row, Col} from 'reactstrap';
+import { NavLink } from 'react-router-dom';
+
 import logoHome from '../components/images/home.png';    
 import logoMedical from '../components/images/medical.png';    
 import logoTransport from '../components/images/transport.png';    
@@ -23,14 +25,13 @@ export function CategoryObject(){
 
                     <Row>
                         <Col xs="4">
-                            <Card body style={{ backgroundColor: '#d1e2ff', margin: '20px'}}>
-                                <center>
-                                    <CardTitle style={{fontWeight: "bold", fontSize: "30px"}}><center>Domotique</center></CardTitle>
-                                    <img src={logoHome} width="100" height="100"/>
-                                    <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                                </center>
-                        
-                            </Card>
+                                <Card body style={{ backgroundColor: '#d1e2ff', margin: '20px'}} >
+                                    <center>
+                                        <CardTitle style={{fontWeight: "bold", fontSize: "30px"}}><center>Domotique</center></CardTitle>
+                                        <img src={logoHome} width="100" height="100"/>
+                                        <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                                    </center>
+                                </Card>
                         </Col>
                         <Col xs="4">
                         <Card body style={{ backgroundColor: '#d1e2ff', margin: '20px'}}>
