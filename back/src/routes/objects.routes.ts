@@ -10,7 +10,6 @@ const upload = multer({
 
 const objectController = ObjectController.getInstance();
 
-
 objectsRoutes.post('/', objectController.create);
 
-export default  objectsRoutes;
+export default objectsRoutes;

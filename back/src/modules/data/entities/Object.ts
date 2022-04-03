@@ -10,11 +10,9 @@ class Objects {
   @PrimaryColumn()
   id?: string;
 
-  @Column()
-  name: string;
-
-  @Column()
-  description: string;
+  @OneToMany(() => Vulnerability, vulnerability => vulnerability.object, { eager: true })
+  @JoinColumn({ name: 'id' })
+  vulnerabilities: Vulnerability[];
 
   @OneToMany(() => Attack, attack => attack.object, { eager: true })
   @JoinColumn({ name: 'id' })
@@ -24,13 +22,15 @@ class Objects {
   @JoinColumn({ name: 'id' })
   advices: Advice[];
 
-  @OneToMany(() => Vulnerability, Vulnerability => Vulnerability.object, { eager: true })
-  @JoinColumn({ name: 'id' })
-  Vulnerabilities: Vulnerability[];
-
-  @OneToOne(() => Category)
-  @JoinColumn()
+  @OneToOne(() => Category, { eager: true })
+  @JoinColumn({ name: 'id_category' })
   category: Category;
+
+  @Column()
+  name: string;
+
+  @Column()
+  description: string;
 
   @CreateDateColumn()
   created_at: Date;

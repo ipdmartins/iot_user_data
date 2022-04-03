@@ -1,13 +1,16 @@
 {
   "dependencies": {
+    "@types/mysql": "^2.15.21",
     "class-transformer": "^0.5.1",
     "csv-parse": "^5.0.4",
     "eslint-init": "^0.1.12",
     "express": "^4.17.2",
     "multer": "^1.4.4",
     "mysql": "^2.18.1",
+    "nodemon": "^2.0.15",
     "reflect-metadata": "^0.1.13",
     "swagger-ui-express": "^4.3.0",
+    "ts-node": "^10.7.0",
     "tsyringe": "^4.6.0",
     "typeorm": "^0.2.44",
     "uuid": "^8.3.2"
@@ -34,3 +37,5 @@
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli"
   }
 }
+
+
