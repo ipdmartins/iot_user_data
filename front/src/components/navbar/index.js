@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
 import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  Nav,
-  NavItem,
   Card,
   CardBody,
   CardTitle,
@@ -13,7 +8,6 @@ import {
   Button,
   Row,
   Col,
-  Badge
 } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
@@ -42,7 +36,6 @@ const Headers = (props) => {
           <NavLink to="/"><center>Présentation du projet</center></NavLink>
         </Col>
         <Col sm={4}>
-          
           <NavLink to="/categoryobject"><center>Trouver un objet par catégorie</center></NavLink>
         </Col>
         <Col >
@@ -53,27 +46,9 @@ const Headers = (props) => {
               <Col>
                 <Button type="submit" color="primary"><span className='bi bi-search'></span> Search</Button>
               </Col>
-           
           </Row>
         </Col>        
       </Row>
-      {/* <Navbar color="secondary" light expand="md">
-        <NavbarToggler />
-        <Collapse navbar>
-          <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink to="/">Présentation du projet</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink to="/categoryobject">Trouver un objet par catégorie</NavLink>
-            </NavItem>
-            <NavItem className="float-right">
-              <Input placeholder="Rechercher un objet par son nome" />
-            </NavItem>
-            <Button type="submit" color="primary"><span className='bi bi-search'></span> Search</Button>
-          </Nav>
-        </Collapse>
-      </Navbar> */}
     </div >
 
   );
