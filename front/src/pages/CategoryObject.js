@@ -13,40 +13,54 @@ export function CategoryObject(){
         <div>
             <Navbar/>
 
-            <Card style={{margin:'30px', backgroundColor:'#f2f2f2'}}>
+            <Card style={{marginRight:'30px', marginLeft:'30px', marginTop:'20px', backgroundColor:'#f2f2f2'}}>
                 <CardBody className="text-justify" > 
                     
                     <CardTitle tag="h4" style={{textAlign:"center"}}>
-                        <center>Choississez la catégorie que vous souhaitez
+                        <center><strong>Choississez la catégorie que vous souhaitez</strong>
                         </center>
+                        <br/>
                     </CardTitle>
 
                     <Row>
                         <Col xs="4">
-                                <Card body style={{ backgroundColor: '#d1e2ff', margin: '20px'}} >
+                                <Card body style={{borderWidth: '3px', backgroundColor: '#d1e2ff', margin: '20px'}} >
                                     <center>
+                                        <br/><br/>                                       
                                         <CardTitle style={{fontWeight: "bold", fontSize: "30px"}}><center>Domotique</center></CardTitle>
-                                        <img src={logoHome} width="100" height="100"/>
-                                        <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                                        <br/>
+                                        <img src={logoHome} width="125" height="125"/>
+                                        <br/><br/>
+                                        <CardText>Contient tous les objets connectés que l'on peut retrouver dans une maison</CardText>
+                                        <br/><br/>
+
                                     </center>
                                 </Card>
                         </Col>
                         <Col xs="4">
-                        <Card body style={{ backgroundColor: '#d1e2ff', margin: '20px'}}>
+                        <Card body style={{borderWidth: '3px', backgroundColor: '#d1e2ff', margin: '20px'}}>
                                 <center>
-                                    <CardTitle style={{fontWeight: "bold", fontSize: "30px"}}><center>Medical</center></CardTitle>
-                                    <img src={logoMedical} width="100" height="100"/>
-                                    <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                                     <br/><br/>                                       
+                                    <CardTitle style={{fontWeight: "bold", fontSize: "30px"}}><center>Médical</center></CardTitle>
+                                    <br/>
+                                    <img src={logoMedical} width="125" height="125"/>
+                                    <br/><br/>
+                                    <CardText>Contient tous les objets connectés qui servent dans le domaine du médical</CardText>
+                                    <br/><br/>
                                 </center>
                         
                             </Card>
                         </Col>
                         <Col xs="4">
-                        <Card body style={{ backgroundColor: '#d1e2ff', margin: '20px'}}>
+                        <Card body style={{borderWidth: '3px', backgroundColor: '#d1e2ff', margin: '20px'}}>
                                 <center>
+                                    <br/><br/>
                                     <CardTitle style={{fontWeight: "bold", fontSize: "30px"}}><center>Transport</center></CardTitle>
-                                    <img src={logoTransport} width="100" height="100"/>
-                                    <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                                    <br/>
+                                    <img src={logoTransport} width="125" height="125"/>
+                                    <br/><br/>
+                                    <CardText>Contient tous les objets connectés que l'on peut retrouver pour le transport</CardText>
+                                    <br/><br/>
                                 </center>
                             </Card>
                         </Col>
