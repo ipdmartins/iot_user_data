@@ -12,8 +12,8 @@ interface ICreateObjectDTO {
 
 interface IObjectRepository {
   create(data: ICreateObjectDTO): Promise<Objects>;
+  listByIdSubCategory(idSubCategory: string): Promise<Objects[]>;
   showByName(name: string): Promise<Objects | undefined>;
-  list(): Promise<Objects[]>;
   update(data: ICreateObjectDTO): Promise<Objects>;
   delete(id: string): Promise<void>;
 }

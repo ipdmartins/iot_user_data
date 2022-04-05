@@ -28,6 +28,23 @@ export class ObjectController {
 
     const object = await createObjectService.execute(request.body);
 
+    if (typeof object === 'string') {
+      return response.status(400).send(object);
+    }
+
+    return response.json(object);
+  }
+  
+  public async listByIdSubCategory(request: Request, response: Response): Promise<Response> {
+
+    const createObjectService = container.resolve(CreateObjectService);
+
+    const object = await createObjectService.execute(request.body);
+
+    if (typeof object === 'string') {
+      return response.status(400).send(object);
+    }
+
     return response.json(object);
   }
 

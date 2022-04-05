@@ -9,13 +9,22 @@ class ObjectRepository implements IObjectRepository {
     this.repository = getRepository(Objects);
   }
 
-  public async create({ name, description }: ICreateObjectDTO): Promise<Objects> {
-    const object = await this.repository.create({
-      name,
-      description,
-    });
+  public async create(data: ICreateObjectDTO): Promise<Objects> {
+    const object = await this.repository.create(data);
 
     return this.repository.save(object);
+  }
+
+  public async listByIdSubCategory(idSubCategory: string): Promise<Objects[]> {
+    const objects = await this.repository
+      .createQueryBuilder('object')
+      .where('object.id_sub_category = :idSubCategory', {
+        idSubCategory,
+      })
+      .getMany();
+
+    return objects;
+
   }
 
   public async showByName(name: string): Promise<Objects | undefined> {
@@ -29,9 +38,6 @@ class ObjectRepository implements IObjectRepository {
     return object;
   }
 
-  public async list(): Promise<Objects[]> {
-    throw new Error('Method not implemented.');
-  }
   public async update(data: ICreateObjectDTO): Promise<Objects> {
     throw new Error('Method not implemented.');
   }

@@ -18,11 +18,11 @@ class CreateObjectService {
     private objectVulnerabilityRepository: IObjectVulnerabilityRepository,
   ) { }
 
-  async execute(data: ICreateObjectDTO): Promise<Objects> {
+  async execute(data: ICreateObjectDTO): Promise<Objects | string> {
     const objectAlreadyExists = await this.objectRepository.showByName(data.name);
 
     if (objectAlreadyExists) {
-      throw new Error('Object already exists');
+      return 'Object already exists';
     }
 
     const object = await this.objectRepository.create(data);
