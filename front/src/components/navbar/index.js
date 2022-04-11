@@ -36,8 +36,11 @@ const Headers = (props) => {
           <NavLink to="/"><center>Présentation du projet</center></NavLink>
         </Col>
         <Col sm={4}>
-          <NavLink to="/categoryobject"><center>Trouver un objet par catégorie</center></NavLink>
+          <NavLink to="/categoryobject"><center>Mon environnement IoT</center></NavLink>
         </Col>
+        {/* <Col sm={4}>
+          <NavLink to="/categoryobject"><center>Trouver un objet par catégorie</center></NavLink>
+        </Col> */}
         <Col >
           <Row>
               <Col>

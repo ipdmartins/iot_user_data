@@ -1,12 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/navbar/index';
 import Footbar from '../components/footer/index';
 import { Card, CardBody, CardTitle, CardText, Row, Col } from 'reactstrap';
 import logoHome from '../assets/images/home.png'
 import logoMedical from '../assets/images/medical.png';
 import logoTransport from '../assets/images/transport.png';
+import api from '../services/api';
+import { NavLink, useParams } from 'react-router-dom';
 
 export function CategoryObject() {
+  const [categories, setCategories] = useState([{
+    name: ''
+  }]);
+
+  console.log(categories);
+  async function getCategories() {
+    try {
+      const response = await api.get(`/category`);
+
+      setCategories(response.data);
+    } catch (error) {
+      Notification({
+        title: error.response.data.message || error.message,
+        type: 'error',
+      });
+    }
+  }
+
+  useEffect(() => {
+    async function fetchData() {
+      getCategories();
+    }
+    fetchData();
+  }, []);
 
   return (
     <div>
@@ -18,33 +44,25 @@ export function CategoryObject() {
             </center>
           </CardTitle>
           <Row>
-            <Col xs="4">
-              <Card body style={{ backgroundColor: '#d1e2ff', margin: '20px' }} >
-                <center>
-                  <CardTitle style={{ fontWeight: "bold", fontSize: "30px" }}><center>Domotique</center></CardTitle>
-                  <img src={logoHome} width="100" height="100" />
-                  <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                </center>
-              </Card>
-            </Col>
-            <Col xs="4">
-              <Card body style={{ backgroundColor: '#d1e2ff', margin: '20px' }}>
-                <center>
-                  <CardTitle style={{ fontWeight: "bold", fontSize: "30px" }}><center>Medical</center></CardTitle>
-                  <img src={logoMedical} width="100" height="100" />
-                  <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                </center>
-              </Card>
-            </Col>
-            <Col xs="4">
-              <Card body style={{ backgroundColor: '#d1e2ff', margin: '20px' }}>
-                <center>
-                  <CardTitle style={{ fontWeight: "bold", fontSize: "30px" }}><center>Transport</center></CardTitle>
-                  <img src={logoTransport} width="100" height="100" />
-                  <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                </center>
-              </Card>
-            </Col>
+            {categories.map(categoriesList => {
+              return (
+                <>
+                  <Col xs="4">
+                    <Card body style={{ backgroundColor: '#d1e2ff', margin: '20px' }} >
+                      <center>
+                        <CardTitle style={{ fontWeight: "bold", fontSize: "30px" }}>
+                          <NavLink to={`/subcategoryobject/${categoriesList.id}`}>
+                            <center>{categoriesList.name}</center>
+                          </NavLink>
+                        </CardTitle>
+                        <img src={logoHome} width="100" height="100" />
+                        <CardText>{categoriesList.description}</CardText>
+                      </center>
+                    </Card>
+                  </Col>
+                </>
+              )
+            })}
           </Row>
         </CardBody>
       </Card>
