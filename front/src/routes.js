@@ -14,7 +14,8 @@ export default function MainRoutes() {
             <Route path='/' element={<Home />}/>
             <Route path='/categoryobject' element={<CategoryObject />}/>
             <Route path='/objectshow' element={<ObjectShow />}/>
-            <Route path='/subcategoryobject' element={<SubCategoryObject />}/>
+            {/* <Route path='/subcategoryobject' element={<SubCategoryObject />}/> */}
+            <Route path='/subcategoryobject/:id' element={<SubCategoryObject />}/>
             <Route path='/subcategoryobjectlist' element={<SubCategoryObjectList />}/>
             <Route path='*' element={<h1>Page not found</h1>}/>
         </Routes>

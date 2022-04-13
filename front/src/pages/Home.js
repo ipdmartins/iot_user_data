@@ -1,21 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
   Card,
   CardBody,
   CardTitle,
-  CardSubtitle,
   CardText,
   Table,
 } from 'reactstrap';
 import Footer from '../components/footer';
 import Headers from '../components/navbar';
-
-import api from '../services/api';
-
 // import { useParams, useNavigate } from 'react-router-dom';
 
 export function Home() {
-  // const navigate = useNavigate();
+  // const navigate = useNavigate();  
 
   return (
     <div>
