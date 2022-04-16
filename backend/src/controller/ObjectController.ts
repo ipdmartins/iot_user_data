@@ -6,6 +6,7 @@ import { container, singleton } from 'tsyringe';
 import { ClassTransformer } from 'class-transformer';
 // import { Type, plainToClass } from 'class-transformer';
 import { CreateObjectService } from '../services/CreateObjectService';
+import { ListObjectIdSubcategoryService } from '../services/ListObjectIdSubcategoryService';
 
 export class ObjectController {
   private static instance: ObjectController;
@@ -36,16 +37,13 @@ export class ObjectController {
   }
   
   public async listByIdSubCategory(request: Request, response: Response): Promise<Response> {
+    const {idSubCategory} = request.params;
+    
+    const listObjectIdSubcategoryService = container.resolve(ListObjectIdSubcategoryService);
 
-    const createObjectService = container.resolve(CreateObjectService);
+    const objects = await listObjectIdSubcategoryService.execute(idSubCategory);
 
-    const object = await createObjectService.execute(request.body);
-
-    if (typeof object === 'string') {
-      return response.status(400).send(object);
-    }
-
-    return response.json(object);
+    return response.json(objects);
   }
 
 }
