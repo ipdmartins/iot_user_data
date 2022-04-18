@@ -7,6 +7,8 @@ import { ClassTransformer } from 'class-transformer';
 // import { Type, plainToClass } from 'class-transformer';
 import { CreateObjectService } from '../services/CreateObjectService';
 import { ListObjectIdSubcategoryService } from '../services/ListObjectIdSubcategoryService';
+import { ListObjectByNameService } from '../services/ListObjectByNameService';
+import { ShowObjectByIdService } from '../services/ShowObjectByIdService';
 
 export class ObjectController {
   private static instance: ObjectController;
@@ -35,15 +37,35 @@ export class ObjectController {
 
     return response.json(object);
   }
-  
-  public async listByIdSubCategory(request: Request, response: Response): Promise<Response> {
-    const {idSubCategory} = request.params;
-    
-    const listObjectIdSubcategoryService = container.resolve(ListObjectIdSubcategoryService);
 
-    const objects = await listObjectIdSubcategoryService.execute(idSubCategory);
+  public async showById(request: Request, response: Response): Promise<Response> {
+    const { id } = request.params;
 
-    return response.json(objects);
+    const showObjectByIdService = container.resolve(ShowObjectByIdService);
+
+    const object = await showObjectByIdService.execute(id);
+
+    return response.json(object);
+  }
+
+  public async listObjects(request: Request, response: Response): Promise<Response> {
+    const { name, idSubCategory } = request.query;
+
+    let resp;
+
+    if (name) {
+      const listObjectByNameService = container.resolve(ListObjectByNameService);
+
+      resp = await listObjectByNameService.execute(String(name));
+    }
+
+    if (idSubCategory) {
+      const listObjectIdSubcategoryService = container.resolve(ListObjectIdSubcategoryService);
+
+      resp = await listObjectIdSubcategoryService.execute(String(idSubCategory));
+    }
+
+    return response.json(resp);
   }
 
 }

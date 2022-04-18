@@ -11,7 +11,7 @@ import {
 } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
-const Headers = (props) => {
+const Headers = () => {
   // const [isOpen, setIsOpen] = useState(false);
 
   // const toggle = () => setIsOpen(!isOpen);
@@ -38,9 +38,9 @@ const Headers = (props) => {
         <Col sm={4}>
           <NavLink to="/categoryobject"><center>Mon environnement IoT</center></NavLink>
         </Col>
-        {/* <Col sm={4}>
+        <Col sm={4}>
           <NavLink to="/categoryobject"><center>Trouver un objet par catégorie</center></NavLink>
-        </Col> */}
+        </Col>
         <Col >
           <Row>
               <Col>
