@@ -79,7 +79,6 @@ class ObjectRepository implements IObjectRepository {
   }
 
   public async listByIdSubCategory(idSubCategory: string): Promise<Objects[]> {
-    console.log();
     
     const object = await this.repository
       .createQueryBuilder('object')

@@ -53,15 +53,15 @@ export function ObjectShow() {
           <h5 style={{ textAlign: 'center' }}>
             Voici le détail de l'objet. Vous pouvez l'ajouter à votre environnement en cliquant sur le bouton "ajouter".
           </h5>
-          <br />
-          <Row>
+          <br/>
+          <Row style={{ marginBottom: '200px' }}>
             <Col sm="3">
               <Card body style={{ backgroundColor: '#d1e2ff' }} >
                 <h5 style={{ fontWeight: "bold" }}>{`Nom: ${object.objectname}`}</h5>
                 <CardText>{`Description: ${object.description}`}</CardText>
                 <center><h6>Image du produit</h6></center>
                 <Card >
-                  <center><img width='40%' height='50%' src={logoEnceinte} /></center>
+                  <center><img width='40%' height='50%' src={object.image} /></center>
                 </Card>
                 <Button
                   color="success"
@@ -89,19 +89,14 @@ export function ObjectShow() {
             </Col>
             <Col sm="9" >
               <Card className='ml-2' border="light" style={{ backgroundColor: '#f2f2f2' }}>
-                <CardTitle style={{ fontWeight: "bold" }}>1 - Vulnérabilités</CardTitle>
                 <CardText>
-                  {object.descvuln}
+                  <span style={{ fontWeight: "bold" }}>1 - Vulnérabilités: </span>{object.descvuln}
                 </CardText>
-                <br />
-                <CardTitle style={{ fontWeight: "bold" }}>2 - Cyberattaques possibles</CardTitle>
                 <CardText>
-                  {object.descattack}
+                  <span style={{ fontWeight: "bold" }}>2 - Cyberattaques possibles: </span>{object.descattack}
                 </CardText>
-                <br />
-                <CardTitle style={{ fontWeight: "bold" }}>3 - Conseils</CardTitle>
                 <CardText>
-                  {object.descadvice}
+                  <span style={{ fontWeight: "bold" }}>3 - Conseils: </span>{object.descadvice}
                 </CardText>
               </Card>
             </Col>

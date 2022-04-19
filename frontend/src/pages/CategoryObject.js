@@ -77,7 +77,8 @@ export function CategoryObject() {
 
         if (!found) {
           listObjects.push(element);
-        } else {
+        }
+        else {
           listBoard.push(element);
         }
       });
@@ -121,7 +122,7 @@ export function CategoryObject() {
 
   async function moveToObjects(object, index) {
     const foundIndex = Globals.environmentObjects.findIndex(item => item.id === object.id);
-
+    console.log(object);
     Globals.environmentObjects.splice(foundIndex, 1);
 
     setObjects([...objects, object]);
@@ -180,8 +181,8 @@ export function CategoryObject() {
               </Col>
             }
           </Row>
-          <Row>
-            <Col sm={2} style={{ height: '100%', width: '10%' }}>
+          <Row >
+            <Col sm={2} style={{ height: '100%', width: '10%', marginBottom: '50px' }}>
               {objects.map((objectsList, index) => {
                 return (
                   <div>
@@ -195,8 +196,8 @@ export function CategoryObject() {
                       }}
                     >
                       <center>
-                        <center> <p style={{ fontWeight: "bold", margin: "0" }}>{objectsList.name}</p></center>
-                        <img alt='objectDesc' src={logoEnceinte} width="25%" height="25%" />
+                        <center> <p style={{ fontWeight: "bold", margin: "0" }}>{objectsList.name || objectsList.objectname}</p></center>
+                        <img alt='objectDesc' src={objectsList.image} width="100%" height="100%" />
                       </center>
                     </Card>
                     <UncontrolledTooltip placement="right" target={`object_${index}`}>
@@ -206,11 +207,11 @@ export function CategoryObject() {
                 )
               })}
             </Col>
-            {(board.length > 0 || objects.length > 0) &&
+            {(Globals.environmentObjects.length > 0 || objects.length > 0) &&
               <Col sm={10}>
                 <CardGroup className='mt-2' style={{ borderWidth: '2px', backgroundColor: '#cfd7e6', height: '100%', width: '90%' }} >
                   <Row>
-                    {board.map((boardList, index) => {
+                    {Globals.environmentObjects.map((boardList, index) => {
                       return (
                         <Col>
                           <Card
@@ -223,7 +224,7 @@ export function CategoryObject() {
                           >
                             <center>
                               <center> <p style={{ fontWeight: "bold" }}>{boardList.name}</p></center>
-                              <img alt='objectDesc' src={logoEnceinte} width="90" height="90" />
+                              <img alt='objectDesc' src={boardList.image} width="90" height="90" />
                             </center>
                           </Card>
                           <UncontrolledTooltip placement="right" target={`board_${index}`}>
@@ -255,61 +256,36 @@ export function CategoryObject() {
         isOpen={modalOpenDetail}
         toggle={toggleModalDetail}
         backdrop="static"
-        size="md"
+        size="xs"
       >
         <ModalHeader toggle={toggleModalDetail}>
           Détails de l'objet
         </ModalHeader>
         <ModalBody>
           <Row>
-            <Col>
-              <Label style={{ fontWeight: "bold" }}>
-                Nom:
-              </Label>
-              <Label>
-                {modalObject.objectname}
-              </Label>
-            </Col>
+            <Label>
+              <span style={{ fontWeight: "bold" }}>Nom: </span>{modalObject.objectname}
+            </Label>
           </Row>
           <Row>
-            <Col>
-              <Label style={{ fontWeight: "bold" }}>
-                Description:
-              </Label>
-              <Label>
-                {modalObject.description}
-              </Label>
-            </Col>
+            <Label>
+              <span style={{ fontWeight: "bold" }}>Description: </span>{modalObject.description}
+            </Label>
           </Row>
           <Row>
-            <Col>
-              <Label style={{ fontWeight: "bold" }}>
-                Vulnérabilités:
-              </Label>
-              <Label>
-                {modalObject.descvuln}
-              </Label>
-            </Col>
+            <Label>
+              <span style={{ fontWeight: "bold" }}>Vulnérabilités: </span>{modalObject.descvuln}
+            </Label>
           </Row>
           <Row>
-            <Col>
-              <Label style={{ fontWeight: "bold" }}>
-                Attaques:
-              </Label>
-              <Label>
-                {modalObject.descattack}
-              </Label>
-            </Col>
+            <Label>
+              <span style={{ fontWeight: "bold" }}>Attaques: </span>{modalObject.descattack}
+            </Label>
           </Row>
           <Row>
-            <Col>
-              <Label style={{ fontWeight: "bold" }}>
-                Conseils:
-              </Label>
-              <Label>
-                {modalObject.descadvice}
-              </Label>
-            </Col>
+            <Label>
+              <span style={{ fontWeight: "bold" }}>Conseils: </span>{modalObject.descadvice}
+            </Label>
           </Row>
         </ModalBody>
       </Modal>
