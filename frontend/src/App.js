@@ -7,7 +7,6 @@ import '../src/assets/css/home.css'
 
 function App() {
   return (
-    // <DndProvider backend={HTML5Backend}>
       <Router>
         <Routes />
         <ToastContainer />

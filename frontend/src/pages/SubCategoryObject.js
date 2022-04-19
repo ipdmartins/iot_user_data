@@ -1,18 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardBody, CardTitle, Row, Col } from 'reactstrap';
 import { useParams } from 'react-router-dom';
-// import { NotificationManager } from 'react-notifications';
 import Navbar from '../components/navbar/index';
 import Footbar from '../components/footer/index';
 import api from '../services/api';
-import logoEnceinte from '../assets/images/enceinte.png'
+// import logoEnceinte from '../assets/images/enceinte.png'
 import Notification from '../components/Notification';
-// import logoTV from '../assets/images/tv.png';
-// import logoLampe from '../assets/images/lampe.png';
-// import logoCamera from '../assets/images/camera.png'
-// import logoThermostat from '../assets/images/thermostat.png';
-// import logoAlarme from '../assets/images/alarme.png';
-// import Notification from '../components/Notification';
 
 export function SubCategoryObject() {
   const { id } = useParams();
@@ -51,27 +44,14 @@ export function SubCategoryObject() {
           <Row>
             {subCategories.map(subCategoriesList => {
               return (
-                  <Col sm={2} >
-                    <Card className='m-0 p-0' style={{ borderWidth: '3px', backgroundColor: '#d1e2ff' }} >
-                      <center>
-                        <p style={{ fontWeight: "bold" }}><center>{subCategoriesList.name}</center></p>
-                        <img alt='subcategory' src={logoEnceinte} width="90" height="90" />
-                      </center>
-                    </Card>
-                  </Col>
-
-                
-              //   <Col sm={3} key={categoriesList.id}>
-              //   <Card style={{ backgroundColor: '#d1e2ff', textAlign: 'center' }} >
-              //     <NavLink to={`/subcategoryobject/${categoriesList.id}`}>
-              //       <h4>
-              //         {categoriesList.name}
-              //       </h4>
-              //       <img alt='logo' src={logoHome} width="100" height="100" />
-              //       <p>{categoriesList.description}</p>
-              //     </NavLink>
-              //   </Card>
-              // </Col>
+                <Col sm={2} >
+                  <Card className='m-0 p-0' style={{ borderWidth: '3px', backgroundColor: '#d1e2ff' }} >
+                    <center>
+                      <p style={{ fontWeight: "bold" }}><center>{subCategoriesList.name}</center></p>
+                      {/* <img alt='subcategory' src={logoEnceinte} width="90" height="90" /> */}
+                    </center>
+                  </Card>
+                </Col>
               )
             })}
           </Row>

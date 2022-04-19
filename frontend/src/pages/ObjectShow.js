@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink, useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import {
   Card,
   CardBody,
-  CardTitle,
   CardText,
   Row,
   Col,
   Button,
   Badge
 } from 'reactstrap';
-import logoEnceinte from '../assets/images/enceinte.png'
 import Footer from '../components/footer/index';
 import Navbar from '../components/navbar/index';
 import api from '../services/api';

@@ -11,7 +11,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import api from '../services/api';
 import Navbar from '../components/navbar/index';
 import Footbar from '../components/footer/index';
-// import logoEnceinte from '../assets/images/enceinte.png'
 import Notification from '../components/Notification';
 
 export function SubCategoryObjectList() {
@@ -58,8 +57,6 @@ export function SubCategoryObjectList() {
                       navigate(`/objectshow/${objectsList.id}`);
                     }}
                   >
-                    {/* <center>
-                    </center> */}
                     <center> <p style={{ fontWeight: "bold", margin: "0" }}>{objectsList.name}</p></center>
                     <CardImg alt='objectDesc' src={objectsList.image} width="20%" height="30%" />
 

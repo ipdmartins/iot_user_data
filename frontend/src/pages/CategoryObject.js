@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Row, Col, CardBody, Label, CardGroup, UncontrolledTooltip, Button, Modal, ModalHeader, ModalBody, ModalFooter, CardSubtitle, CardText } from 'reactstrap';
-// import { NavLink } from 'react-router-dom';
-
-// import AsyncSelect from 'react-select/async';
+import {
+  Card,
+  Row,
+  Col,
+  CardBody,
+  Label,
+  CardGroup,
+  UncontrolledTooltip,
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+} from 'reactstrap';
 import Select from 'react-select';
 import api from '../services/api';
 import Navbar from '../components/navbar/index';
 import Footbar from '../components/footer/index';
-import logoEnceinte from '../assets/images/enceinte.png'
 import Notification from '../components/Notification';
 import Globals from '../components/Global';
-
-// import logoHome from '../assets/images/home.png'
-// import logoMedical from '../assets/images/medical.png';
-// import logoTransport from '../assets/images/transport.png';
 
 export function CategoryObject() {
   const [categories, setCategories] = useState([]);
@@ -22,7 +26,6 @@ export function CategoryObject() {
   const [modalObject, setModalObject] = useState([]);
   const [board, setBoard] = useState([]);
   const [modalOpenDetail, setModalOpenDetail] = useState(false);
-  console.log(Globals.environmentObjects);
 
   async function getCategories() {
     try {
@@ -122,7 +125,6 @@ export function CategoryObject() {
 
   async function moveToObjects(object, index) {
     const foundIndex = Globals.environmentObjects.findIndex(item => item.id === object.id);
-    console.log(object);
     Globals.environmentObjects.splice(foundIndex, 1);
 
     setObjects([...objects, object]);
@@ -158,7 +160,6 @@ export function CategoryObject() {
                 classNamePrefix="select"
                 name="idcategory"
                 options={categories}
-                // value={professionalSelected}
                 onChange={professional => {
                   getSubCategories(professional.value)
                 }}
@@ -173,7 +174,6 @@ export function CategoryObject() {
                   classNamePrefix="select"
                   name="idSubCategory"
                   options={subCategories}
-                  // value={professionalSelected}
                   onChange={subCategory => {
                     getObjects(subCategory.value)
                   }}

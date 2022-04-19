@@ -1,11 +1,8 @@
-// import 'bootstrap/dist/css/bootstrap.css';
-// import 'bootstrap/dist/css/bootstrap-theme.css';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
-
-// //https://reactstrap.github.io/?path=/docs/components-button--button
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
