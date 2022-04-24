@@ -3,6 +3,7 @@ import { Category } from "../entity/Category";
 interface ICreateCategoryDTO {
   name: string;
   description: string;
+  image: string;
 }
 
 interface ICategoryRepository {

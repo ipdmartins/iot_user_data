@@ -1,0 +1,25 @@
+Informations générales
+IoT webpage est un projet visant à éduquer et sensibiliser les utilisateurs sur 
+les risques liés à la protection des renseignements personnels et en particulier 
+les risques liés aux objets Connectés. Le système met en avant les risques encourus 
+par les utilisateurs vis-à-vis de leurs objets utilisés au quotidien. Il prodigue 
+également des conseils de sécurisation et une liste d`attaques possible.
+
+Prérequis 
+Les logiciels Docker et nodeJS devront être installé au préalable. Rendez-vous dans le 
+terminal de votre IDE et placez-vous à la racine du projet. Il faudra ensuite taper les 
+commandes suivantes dans votre terminal pour faire fonctionner le backend : 
+-    git clone https://github.com/ipdmartins/iot_user_data.git
+-    “cd backend”, 
+-    “npm install”,
+-    “docker-compose up”,
+-    “npm run dev”.
+
+Ensuite, pour faire fonctionner le frontend, il faut saisir ces instructions : 
+-    “cd frontend”, 
+-    “npm install”,
+-    “npm run start”.
+
+Auteurs
+Ce logiciel a été conçu par DIALLO Mamadou Moussa, DOLLO Vincent, MARTINS Igor et 
+TALMON LARODERIE Basile

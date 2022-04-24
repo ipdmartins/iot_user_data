@@ -4,6 +4,7 @@ interface ICreateSubCategoryDTO {
   id_category: string;
   name: string;
   description: string;
+  image: string;
 }
 
 interface ISubCategoryRepository {

@@ -25,6 +25,9 @@ class SubCategory {
   @Column()
   description: string;
 
+  @Column({nullable: true})
+  image: string;
+
   @CreateDateColumn()
   created_at: Date;
 
